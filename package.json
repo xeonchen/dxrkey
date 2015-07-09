@@ -5,5 +5,66 @@
   "description": "Add hotkey for https://dxr.mozilla.org/",
   "author": "xeonchen@gmail.com",
   "license": "MPL-2.0",
-  "version": "0.1"
+  "version": "0.2.1",
+  "preferences": [
+    {
+        "name": "useAlt",
+        "title": "Use Alt",
+        "type": "bool",
+        "value": false
+    },
+    {
+        "name": "useCtrl",
+        "title": "Use Ctrl",
+        "type": "bool",
+        "value": true
+    },
+    {
+        "name": "useMeta",
+        "title": "Use Meta",
+        "type": "bool",
+        "value": false
+    },
+    {
+        "name": "useShift",
+        "title": "Use Shift",
+        "type": "bool",
+        "value": false
+    },
+    {
+        "name": "keyCode",
+        "title": "Trigger Key",
+        "type": "menulist",
+        "value": 191,
+        "options": [
+          { "value": "191", "label": "/" },
+          { "value": "65", "label": "A" },
+          { "value": "66", "label": "B" },
+          { "value": "67", "label": "C" },
+          { "value": "68", "label": "D" },
+          { "value": "69", "label": "E" },
+          { "value": "70", "label": "F" },
+          { "value": "71", "label": "G" },
+          { "value": "72", "label": "H" },
+          { "value": "73", "label": "I" },
+          { "value": "74", "label": "J" },
+          { "value": "75", "label": "K" },
+          { "value": "76", "label": "L" },
+          { "value": "77", "label": "M" },
+          { "value": "78", "label": "N" },
+          { "value": "79", "label": "O" },
+          { "value": "80", "label": "P" },
+          { "value": "81", "label": "Q" },
+          { "value": "82", "label": "R" },
+          { "value": "83", "label": "S" },
+          { "value": "84", "label": "T" },
+          { "value": "85", "label": "U" },
+          { "value": "86", "label": "V" },
+          { "value": "87", "label": "W" },
+          { "value": "88", "label": "X" },
+          { "value": "89", "label": "Y" },
+          { "value": "90", "label": "Z" }
+        ]
+    }
+  ]
 }
