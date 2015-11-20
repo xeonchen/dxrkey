@@ -2,7 +2,15 @@
 'use strict';
 
 (function(){
+  const DEBUG = false;
+
   var useAlt, useCtrl, useMeta, useShift, keyCode, caseSensitive;
+
+  function log(s) {
+    if (DEBUG) {
+      console.log(s);
+    }
+  }
 
   function setFocus() {
     let query = document.getElementById('query');
@@ -20,7 +28,7 @@
   }
 
   self.port.on('prefs', function(prefs) {
-    console.log(prefs);
+    log(prefs);
 
     useAlt = prefs.useAlt;
     useCtrl = prefs.useCtrl;
@@ -33,11 +41,11 @@
   });
 
   document.addEventListener('keyup', function(event) {
-    console.log('keyCode = ' + event.keyCode);
-    console.log('altKey = ' + event.altKey);
-    console.log('ctrlKey = ' + event.ctrlKey);
-    console.log('metaKey = ' + event.metaKey);
-    console.log('shiftKey = ' + event.shiftKey);
+    log('keyCode = ' + event.keyCode);
+    log('altKey = ' + event.altKey);
+    log('ctrlKey = ' + event.ctrlKey);
+    log('metaKey = ' + event.metaKey);
+    log('shiftKey = ' + event.shiftKey);
 
     if (event.keyCode == keyCode &&
         event.altKey == useAlt &&

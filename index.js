@@ -5,8 +5,12 @@ let self = require("sdk/self");
 let simplePrefs = require("sdk/simple-prefs");
 let prefs = simplePrefs.prefs;
 
+const DEBUG = false;
+
 function log(s) {
-  console.log(s);
+  if (DEBUG) {
+    console.log(s);
+  }
 }
 
 function dumpSetting() {
