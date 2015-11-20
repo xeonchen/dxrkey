@@ -1,12 +1,22 @@
+/* global self */
 'use strict';
 
 (function(){
-  var useAlt, useCtrl, useMeta, useShift, keyCode;
+  var useAlt, useCtrl, useMeta, useShift, keyCode, caseSensitive;
 
   function setFocus() {
     let query = document.getElementById('query');
     query.focus();
     query.select();
+  }
+
+  function setCaseSensitive() {
+    if (caseSensitive === -1) {
+      return;
+    }
+
+    let e = document.getElementById('case');
+    e.checked = caseSensitive;
   }
 
   self.port.on('prefs', function(prefs) {
@@ -17,6 +27,9 @@
     useMeta = prefs.useMeta;
     useShift = prefs.useShift;
     keyCode = prefs.keyCode;
+    caseSensitive = prefs.caseSensitive;
+
+    setCaseSensitive();
   });
 
   document.addEventListener('keyup', function(event) {

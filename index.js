@@ -5,24 +5,32 @@ let self = require("sdk/self");
 let simplePrefs = require("sdk/simple-prefs");
 let prefs = simplePrefs.prefs;
 
-console.log(prefs.useAlt);
-console.log(prefs.useCtrl);
-console.log(prefs.useMeta);
-console.log(prefs.useShift);
-console.log(prefs.keyCode);
+function log(s) {
+  console.log(s);
+}
+
+function dumpSetting() {
+  log(prefs.useAlt);
+  log(prefs.useCtrl);
+  log(prefs.useMeta);
+  log(prefs.useShift);
+  log(prefs.keyCode);
+  log(prefs.caseSensitive);
+}
 
 pageMod.PageMod({
   include: "https://dxr.mozilla.org/*",
   contentScriptFile: self.data.url("dxr.js"),
   onAttach: function(worker) {
     function update() {
-      console.log('update');
+      dumpSetting();
       worker.port.emit('prefs', {
         'useAlt': prefs.useAlt,
         'useCtrl': prefs.useCtrl,
         'useMeta': prefs.useMeta,
         'useShift': prefs.useShift,
-        'keyCode': prefs.keyCode
+        'keyCode': prefs.keyCode,
+        'caseSensitive': prefs.caseSensitive
       });
     }
 
@@ -31,6 +39,7 @@ pageMod.PageMod({
     simplePrefs.on('useMeta', update);
     simplePrefs.on('useShift', update);
     simplePrefs.on('keyCode', update);
+    simplePrefs.on('caseSensitive', update);
     update();
   }
 });
