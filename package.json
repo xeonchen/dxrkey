@@ -5,7 +5,7 @@
   "description": "Add hotkey for https://dxr.mozilla.org/",
   "author": "xeonchen@gmail.com",
   "license": "MPL-2.0",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "preferences": [
     {
         "name": "useAlt",
@@ -64,17 +64,6 @@
           { "value": "88", "label": "X" },
           { "value": "89", "label": "Y" },
           { "value": "90", "label": "Z" }
-        ]
-    },
-    {
-        "name": "caseSensitive",
-        "title": "Case-sensitive search",
-        "type": "menulist",
-        "value": -1,
-        "options": [
-          { "value": "-1", "label": "untouched" },
-          { "value": "0", "label": "insensitive" },
-          { "value": "1", "label": "sensitive" }
         ]
     }
   ]

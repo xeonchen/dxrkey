@@ -4,7 +4,7 @@
 (function(){
   const DEBUG = false;
 
-  var useAlt, useCtrl, useMeta, useShift, keyCode, caseSensitive;
+  var useAlt, useCtrl, useMeta, useShift, keyCode;
 
   function log(s) {
     if (DEBUG) {
@@ -18,15 +18,6 @@
     query.select();
   }
 
-  function setCaseSensitive() {
-    if (caseSensitive === -1) {
-      return;
-    }
-
-    let e = document.getElementById('case');
-    e.checked = caseSensitive;
-  }
-
   self.port.on('prefs', function(prefs) {
     log(prefs);
 
@@ -35,9 +26,6 @@
     useMeta = prefs.useMeta;
     useShift = prefs.useShift;
     keyCode = prefs.keyCode;
-    caseSensitive = prefs.caseSensitive;
-
-    setCaseSensitive();
   });
 
   document.addEventListener('keyup', function(event) {

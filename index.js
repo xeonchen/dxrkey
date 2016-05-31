@@ -19,7 +19,6 @@ function dumpSetting() {
   log(prefs.useMeta);
   log(prefs.useShift);
   log(prefs.keyCode);
-  log(prefs.caseSensitive);
 }
 
 pageMod.PageMod({
@@ -34,7 +33,6 @@ pageMod.PageMod({
         'useMeta': prefs.useMeta,
         'useShift': prefs.useShift,
         'keyCode': prefs.keyCode,
-        'caseSensitive': prefs.caseSensitive
       });
     }
 
@@ -43,7 +41,6 @@ pageMod.PageMod({
     simplePrefs.on('useMeta', update);
     simplePrefs.on('useShift', update);
     simplePrefs.on('keyCode', update);
-    simplePrefs.on('caseSensitive', update);
     update();
   }
 });
